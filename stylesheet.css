@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+:root, html, body {
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #090a11;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-5px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.radial-gradient-bg {
+  background: radial-gradient(700px at 70%, rgb(16, 16, 35) 30%, #090a11 75%)
+}
+
+#nav-links .active {
+  background-color: a3a3a3ae;
+  border-bottom: 1px solid grey;
+}
+
+/* XTRA */
+
+/* Base Typography Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #eaeaea;
+  margin-bottom: 0.75em;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #e2e2e2;
+  margin-bottom: 1.25em;
+}
+
+/* Additional Typography Styling */
+a {
+  font-family: 'Roboto', sans-serif;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #004abd;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: #1a73e8;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #004abd;
+}
+
+/* Quotes and Blockquote Styles */
+blockquote {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  border-left: 4px solid #1a73e8;
+  padding-left: 1rem;
+  margin: 1.5em 0;
+  color: #555;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+ul, ol {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+ul li, ol li {
+  margin-bottom: 0.5rem;
+}
+
+/* Fine-tune font sizes for mobile */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
+
+  h3 {
+      font-size: 1.75rem;
+  }
+  
+  p {
+      font-size: 0.95rem;
+  }
+}
+
+/*TMPPPP*/
+
+
+
+.chart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Candle Styles */
+.candle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+}
+
+.wick {
+  width: 2px;
+  height: 60px;
+  background-color: #ccc;
+}
+
+.body {
+  width: 20px;
+  animation: candleAnimate 10s infinite;
+  transform: scaleY(1);
+  will-change: scaleY;
+}
+
+.origin-bottom {
+  transform-origin: bottom;
+}
+.origin-top {
+  transform-origin: top;
+}
+
+/* Green Candle (price going up) */
+.green {
+  background-color: #28a745;
+  height: 80px;
+}
+
+/* Red Candle (price going down) */
+.red {
+  background-color: #dc3545;
+  height: 50px;
+}
+
+/* Animation */
+@keyframes candleAnimate {
+  0% {
+      transform: scaleY(1);
+  }
+  25% {
+      transform: scaleY(1.2); /* candle growing */
+  }
+  50% {
+      transform: scaleY(1.0); /* candle shrinking */
+  }
+  75% {
+      transform: scaleY(1.1); /* small growth */
+  }
+  100% {
+      transform: scaleY(1); /* reset to original size */
+  }
+}
